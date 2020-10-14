@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -9,11 +10,13 @@ public class MainMenu : MonoBehaviour
     public bool isQuit;
     void OnMouseUp(){
 	if(isStart) {
-		// Application.LoadLevel(1);
+		// todo
 	}
 
     if(isMap) {
-		GetComponent<Renderer>().material.color=Color.cyan;
+		// Only specifying the sceneName or sceneBuildIndex will load the Scene with the Single mode
+        Debug.Log("Load:mapedit");
+		SceneManager.LoadScene("mapedit", LoadSceneMode.Single);
     }
     
 	if (isQuit) {
